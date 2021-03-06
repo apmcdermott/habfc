@@ -1,0 +1,363 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+  Author's custom styles
+========================================================================== */
+:root {
+  --bg-color: #f9e3cf;
+  --primary: #972522;
+  --accent: #E47D3D;
+  --medium-orange: #E5975C;
+  --light-orange: #FDE0C8;
+  --tan: #B99976;
+  --beige: #fee1c9;
+  --dark-gray: #232327;
+  --text: var(--dark-gray);
+}
+
+body {
+  --alpha: 0.2;
+  --tan: 185, 153, 118;
+  background:
+    radial-gradient(rgba(var(--tan), var(--alpha)) 3px, transparent 4px),
+    radial-gradient(rgba(var(--tan), var(--alpha)) 3px, transparent 4px),
+    linear-gradient(var(--bg-color) 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, rgba(var(--tan), var(--alpha)) 75px, rgba(var(--tan), var(--alpha)) 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, rgba(var(--tan), var(--alpha)) 76px, rgba(var(--tan), var(--alpha)) 77px, transparent 78px, transparent 109px),
+    var(--bg-color);
+  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0 0, 0 0, 0 0, 0 0;
+}
+
+.clipping-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+}
+
+.circle {
+  --size: 200vh;
+  width: var(--size);
+  height: var(--size);
+  background: #F1BE9E;
+  border-radius: 50%;
+  position: absolute;
+  top: -153vh;
+  left: -84vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.wheat {
+  position: relative;
+  display: inline-flex;
+  top: 13px;
+  z-index: -1;
+}
+
+.wheat hr {
+  width: 200px;
+  position: absolute;
+  border-color: var(--medium-orange);
+  bottom: -8px;
+  left: -80%;
+}
+
+.wheat.after {
+  right: 16px;
+}
+
+.ear {
+  display: flex;
+  flex-direction: column;
+  margin-right: -10px;
+}
+
+.grain {
+  --rotate: 45deg;
+  background: var(--accent);
+  display: inline-block;
+  width: 29px;
+  height: 12px;
+  border-radius: 38px / 16px;
+}
+
+.grain.bottom {
+  transform: rotate(var(--rotate));
+}
+.grain.top {
+  transform: rotate(calc(-1 * var(--rotate)));
+  margin-bottom: 12px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: [start] 2fr [headshots] 30rem [end];
+  grid-template-rows: 2fr 3fr;
+  grid-template-areas:
+    "header headshots"
+    "main headshots";
+}
+
+header {
+  grid-area: header;
+  text-align: center;
+  align-self: end;
+}
+
+main {
+  align-self: start;
+  grid-area: main;
+  font-size: 2.5rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: var(--text);
+  font-weight: 500;
+}
+
+h1 {
+  position: relative;
+  display: inline-block;
+  color: var(--primary);
+}
+
+.heading {
+  font-family: 'Satisfy', sans-serif;
+  font-size: 8.5rem;
+  line-height: 0.5;
+  display: block;
+  text-shadow:
+    2px 2px 0 rgba(255, 255, 255, 0.85),
+    3px 3px 0 var(--primary);
+}
+
+.subheading {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  display: block;
+}
+
+.headshots-wrapper {
+  grid-area: headshots;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.headshot {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+}
+
+.headshot img {
+  width: 100%;
+}
+
+figcaption {
+  position: absolute;
+  bottom: 1rem;
+}
+
+figcaption span {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  background-color: white;
+  padding: 0 0.5rem 0 0.25rem;
+}
+
+.social {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.logos a {
+  color: var(--primary);
+  display: inline-block;
+  padding: 0.75rem;
+}
+
+svg {
+  --size: 4rem;
+  fill: currentColor;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 0.75em;
+  }
+  .grain {
+    background: var(--medium-orange);
+  }
+  .wheat {
+    left: -16px;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 481px) {
+  .wheat.show-when-wrapped {
+    left: -16px;
+    margin-top: 1rem;
+  }
+
+  .wheat hr {
+    top: -15px;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    grid-template-areas:
+      'header'
+      'main'
+      'headshots';
+    grid-template-columns: minmax(30rem, 100%);
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  header {
+    margin: 40px 1rem 0;
+  }
+  .heading {
+    line-height: 0.75;
+  }
+}
+
+/* 0 - 716       wrapped
+716 - 1000    inline
+1001 - 1200   wrapped
+1201 +        inline  */
+
+/* header is wrapped and scaled */
+@media (max-width: 716px) {
+  .show-when-wrapped {
+    display: inline-flex;
+  }
+  .hide-when-wrapped {
+    display: none;
+  }
+}
+
+/* header is not wrapped */
+@media (min-width: 716px) and (max-width: 1000px) {
+  .show-when-wrapped {
+    display: none;
+  }
+  .hide-when-wrapped {
+    display: inline-flex;
+  }
+}
+
+/* header is wrapped, not scaled */
+@media (min-width: 1001px) and (max-width: 1200px) {
+  .show-when-wrapped {
+    display: inline-flex;
+  }
+  .hide-when-wrapped {
+    display: none;
+  }
+}
+
+/* header is not wrapped */
+@media (min-width: 1200px) {
+  .show-when-wrapped {
+    display: none;
+  }
+  .hide-when-wrapped {
+    display: inline-flex;
+  }
+}
