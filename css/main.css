@@ -112,26 +112,6 @@ body {
   background-position: 54px 55px, 0 0, 0 0, 0 0, 0 0;
 }
 
-.clipping-wrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: absolute;
-  z-index: 0;
-}
-
-.circle {
-  --size: 200vh;
-  width: var(--size);
-  height: var(--size);
-  background: #F1BE9E;
-  border-radius: 50%;
-  position: absolute;
-  top: -153vh;
-  left: -84vh;
-  overflow: hidden;
-}
-
 .wheat {
   position: relative;
   display: inline-flex;
