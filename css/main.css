@@ -203,6 +203,7 @@ h1 {
   position: relative;
   display: inline-block;
   color: var(--primary);
+  margin-top: 5%;
 }
 
 .heading {
@@ -224,9 +225,11 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.3rem;
   display: block;
+  margin-top: 1.5rem;
 }
 
 .headshots-wrapper {
+  margin: 0.5rem;
   grid-area: headshots;
   display: flex;
   flex-wrap: wrap;
@@ -235,7 +238,9 @@ h1 {
 .headshot {
   position: relative;
   display: inline-block;
+  box-sizing: border-box;
   width: 50%;
+  border: 0.5rem solid transparent;
 }
 
 .headshot img {
@@ -253,11 +258,23 @@ figcaption span {
   font-size: 0.8rem;
   background-color: white;
   padding: 0 0.5rem 0 0.25rem;
+  color: var(--primary);
+}
+
+main section {
+  margin-top: 10%;
+}
+
+.details {
+  font-size: 2.5rem;
+}
+
+.details p {
+  margin: 0;
 }
 
 .social {
   font-size: 2rem;
-  margin-bottom: 3rem;
 }
 
 .logos a {
@@ -267,7 +284,7 @@ figcaption span {
 }
 
 svg {
-  --size: 4rem;
+  --size: 3.5rem;
   fill: currentColor;
   display: block;
   width: var(--size);
@@ -285,6 +302,13 @@ svg {
     left: -16px;
     margin-top: 1rem;
   }
+  .details {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  .social {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 481px) {
@@ -292,7 +316,6 @@ svg {
     left: -16px;
     margin-top: 1rem;
   }
-
   .wheat hr {
     top: -15px;
     border-width: 2px;
